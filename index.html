@@ -1,20 +1,22 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>LSD Graphics</title>
-<meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="LSD Graphics creates custom vehicle wraps, fleet branding, storefront signs, interior wall graphics, and banners for businesses across Toronto and the GTA. Based in East York.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=DM+Sans:opsz,wght@9..40,400..700&display=swap">
 <link rel="stylesheet" href="styles.css">
-<!-- /head -->
-
+</head>
+<body>
 <a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="index.html" aria-label="LSD Graphics home">
-      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
-      <span class="brand-name"><b>LSD</b> Graphics</span>
+      <img class="brand-logo" src="lsd-graphics-logo-horizontal-gold-white.svg" alt="LSD Graphics" width="1070" height="218">
     </a>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
@@ -49,7 +51,7 @@
           <h1>Custom Graphics, Vehicle Wraps &amp; Business Signage</h1>
           <p class="hero-lede">Help your business stand out with custom graphics that bring your brand to life. LSD Graphics transforms vehicles, storefronts, and business spaces into opportunities to get noticed and make a lasting impression.</p>
           <div class="hero-actions">
-            <a class="btn btn-light" href="about.html#quote">
+            <a class="btn btn-primary" href="about.html#quote">
               Request a Quote
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
@@ -137,58 +139,64 @@
       </div>
 
       <!--
-        TO ADD A PROJECT PHOTO: inside a tile, add an image right after the <svg>, e.g.
-        <img class="work-photo" src="images/work-1.jpg" alt="Full wrap on a white delivery van">
-        The photo covers the stripe artwork, the label stays readable, and clicking opens it larger.
+        PROJECT PHOTOS: save each photo next to index.html with the file name used below
+        (work-vehicle-wrap.jpg, work-fleet-branding.jpg, work-storefront.jpg,
+        work-wall-graphics.jpg, work-banners-displays.jpg). Until a file exists,
+        the stripe artwork shows instead.
       -->
       <div class="work-grid">
-        <figure class="work-tile" style="--bg:#0a1530; --l1:#2747ff; --l2:#8db8ff; --l3:#ffffff;">
+        <figure class="work-tile" style="--bg:#0b0b0b; --l1:#ffd400; --l2:#ffffff; --l3:#ffe57a;">
           <svg class="livery" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
             <path class="b4" d="M-40-20C100 50 260 160 420 262L420 270C258 168 96 58-46-12Z"/>
             <path class="b1" d="M-20-20C120 50 260 160 420 250L420 170C280 100 150 20 70-20Z"/>
             <path class="b2" d="M90-20C200 40 310 120 420 160L420 132C320 92 220 22 140-20Z"/>
             <path class="b3" d="M160-20C260 30 340 90 420 118L420 108C345 80 270 22 182-20Z"/>
           </svg>
+          <img class="work-photo" src="work-vehicle-wrap.jpg" alt="Full vehicle wrap on a commercial van" loading="lazy" onerror="this.remove()">
           <figcaption class="work-label"><small>Cars · Vans · Trucks · Trailers</small><h3>Vehicle Wraps</h3></figcaption>
         </figure>
 
-        <figure class="work-tile" style="--bg:#2747ff; --l1:#0a1530; --l2:#ffffff; --l3:#8db8ff;">
+        <figure class="work-tile" style="--bg:#ffd400; --fg:#0b0b0b; --l1:#0b0b0b; --l2:#ffffff; --l3:#0b0b0b; --l4:#0b0b0b;">
           <svg class="livery" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
             <path class="b4" d="M-40-20C100 50 260 160 420 262L420 270C258 168 96 58-46-12Z"/>
             <path class="b1" d="M-20-20C120 50 260 160 420 250L420 170C280 100 150 20 70-20Z"/>
             <path class="b2" d="M90-20C200 40 310 120 420 160L420 132C320 92 220 22 140-20Z"/>
             <path class="b3" d="M160-20C260 30 340 90 420 118L420 108C345 80 270 22 182-20Z"/>
           </svg>
+          <img class="work-photo" src="work-fleet-branding.jpg" alt="Matching fleet graphics on company trucks" loading="lazy" onerror="this.remove()">
           <figcaption class="work-label"><small>Company vehicles</small><h3>Fleet Branding</h3></figcaption>
         </figure>
 
-        <figure class="work-tile" style="--bg:#dfe6f5; --fg:#0a1530; --l1:#0a1530; --l2:#2747ff; --l3:#ffffff; --l4:#2747ff;">
+        <figure class="work-tile" style="--bg:#ece9df; --fg:#0b0b0b; --l1:#0b0b0b; --l2:#ffd400; --l3:#ffffff; --l4:#0b0b0b;">
           <svg class="livery" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
             <path class="b4" d="M-40-20C100 50 260 160 420 262L420 270C258 168 96 58-46-12Z"/>
             <path class="b1" d="M-20-20C120 50 260 160 420 250L420 170C280 100 150 20 70-20Z"/>
             <path class="b2" d="M90-20C200 40 310 120 420 160L420 132C320 92 220 22 140-20Z"/>
             <path class="b3" d="M160-20C260 30 340 90 420 118L420 108C345 80 270 22 182-20Z"/>
           </svg>
+          <img class="work-photo" src="work-storefront.jpg" alt="Storefront sign and window graphics" loading="lazy" onerror="this.remove()">
           <figcaption class="work-label"><small>Signs &amp; windows</small><h3>Storefronts</h3></figcaption>
         </figure>
 
-        <figure class="work-tile" style="--bg:#13234a; --l1:#8db8ff; --l2:#ffffff; --l3:#2747ff;">
+        <figure class="work-tile" style="--bg:#1c1c1c; --l1:#ffffff; --l2:#ffd400; --l3:#ffe57a;">
           <svg class="livery" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
             <path class="b4" d="M-40-20C100 50 260 160 420 262L420 270C258 168 96 58-46-12Z"/>
             <path class="b1" d="M-20-20C120 50 260 160 420 250L420 170C280 100 150 20 70-20Z"/>
             <path class="b2" d="M90-20C200 40 310 120 420 160L420 132C320 92 220 22 140-20Z"/>
             <path class="b3" d="M160-20C260 30 340 90 420 118L420 108C345 80 270 22 182-20Z"/>
           </svg>
+          <img class="work-photo" src="work-wall-graphics.jpg" alt="Branded wall graphic in an office" loading="lazy" onerror="this.remove()">
           <figcaption class="work-label"><small>Interiors</small><h3>Wall Graphics</h3></figcaption>
         </figure>
 
-        <figure class="work-tile" style="--bg:#c9dbff; --fg:#0a1530; --l1:#2747ff; --l2:#0a1530; --l3:#ffffff; --l4:#0a1530;">
+        <figure class="work-tile" style="--bg:#fff1a8; --fg:#0b0b0b; --l1:#0b0b0b; --l2:#ffd400; --l3:#ffffff; --l4:#0b0b0b;">
           <svg class="livery" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
             <path class="b4" d="M-40-20C100 50 260 160 420 262L420 270C258 168 96 58-46-12Z"/>
             <path class="b1" d="M-20-20C120 50 260 160 420 250L420 170C280 100 150 20 70-20Z"/>
             <path class="b2" d="M90-20C200 40 310 120 420 160L420 132C320 92 220 22 140-20Z"/>
             <path class="b3" d="M160-20C260 30 340 90 420 118L420 108C345 80 270 22 182-20Z"/>
           </svg>
+          <img class="work-photo" src="work-banners-displays.jpg" alt="Event banner and display stand" loading="lazy" onerror="this.remove()">
           <figcaption class="work-label"><small>Events &amp; promotions</small><h3>Banners &amp; Displays</h3></figcaption>
         </figure>
       </div>
@@ -210,7 +218,7 @@
           <p>Tell us about your vehicle, storefront, or space, and we'll prepare a quote for your project.</p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-light" href="about.html#quote">
+          <a class="btn btn-dark" href="about.html#quote">
             Request a Quote
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
@@ -225,8 +233,7 @@
   <div class="wrap footer-grid">
     <div class="footer-brand">
       <a class="brand" href="index.html" aria-label="LSD Graphics home">
-        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
-        <span class="brand-name"><b>LSD</b> Graphics</span>
+        <img class="brand-logo" src="lsd-graphics-logo-horizontal-gold-white.svg" alt="LSD Graphics" width="1070" height="218">
       </a>
       <p>Custom graphics, vehicle wraps, and signage for businesses across Toronto and the Greater Toronto Area.</p>
     </div>
@@ -262,5 +269,5 @@
 </dialog>
 
 <script src="script.js"></script>
-
-</body></html>
+</body>
+</html>
