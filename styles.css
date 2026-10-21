@@ -272,30 +272,48 @@ body::before {
 .livery .b3 { fill: var(--l3, #ffffff); }
 .livery .b4 { fill: var(--l4, var(--sky)); opacity: .45; }
 
-/* ---------- Home hero ---------- */
-.hero-section { padding-top: 8px; }
+/* ---------- Home hero (full width) ---------- */
 .hero {
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  min-height: 620px;
-  display: flex;
-  align-items: center;
-  padding: clamp(44px, 6.5vw, 96px) clamp(26px, 5.5vw, 80px);
-  border-radius: var(--r-panel);
   background: var(--navy);
   color: var(--on-dark);
 }
+.hero-media {
+  /* HERO PHOTO: save the image as images/hero.jpg (landscape, at least 2000px wide).
+     If the file is missing, the navy background and stripes show instead. */
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background: url("images/hero.jpg") center right / cover no-repeat;
+}
 .hero::before {
+  /* keeps the headline readable over any photo */
   content: "";
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: -2;
   background:
-    radial-gradient(circle at 88% 6%, rgba(39, 71, 255, .55), transparent 46%),
-    radial-gradient(circle at 0% 100%, rgba(141, 184, 255, .12), transparent 40%);
+    linear-gradient(90deg, rgba(10, 21, 48, .97) 0%, rgba(10, 21, 48, .9) 36%, rgba(10, 21, 48, .5) 66%, rgba(10, 21, 48, .2) 100%),
+    radial-gradient(circle at 90% 0%, rgba(39, 71, 255, .45), transparent 45%);
+}
+.hero::after {
+  /* soft fade at the bottom so the stripes sit on a clean edge */
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 40%;
+  z-index: -2;
+  background: linear-gradient(transparent, rgba(10, 21, 48, .55));
 }
 .hero .livery { inset: 0; width: 100%; height: 100%; z-index: -1; }
+.hero-inner {
+  display: flex;
+  align-items: center;
+  min-height: 680px;
+  padding-block: clamp(72px, 8vw, 120px) clamp(120px, 12vw, 170px);
+}
 .hero-content { position: relative; display: grid; gap: 26px; max-width: 760px; min-width: 0; }
 
 .location-chip {
@@ -332,8 +350,14 @@ body::before {
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
 
 @media (max-width: 760px) {
-  .hero { min-height: 0; align-items: flex-start; padding-bottom: 230px; border-radius: 22px; }
-  .hero .livery { top: auto; bottom: 0; height: 240px; }
+  .hero::before {
+    background:
+      linear-gradient(180deg, rgba(10, 21, 48, .93) 0%, rgba(10, 21, 48, .82) 60%, rgba(10, 21, 48, .7) 100%),
+      radial-gradient(circle at 90% 0%, rgba(39, 71, 255, .45), transparent 50%);
+  }
+  .hero-media { background-position: 65% center; }
+  .hero-inner { min-height: 0; align-items: flex-start; padding-block: 56px 220px; }
+  .hero .livery { top: auto; height: 210px; }
 }
 
 /* ---------- Section headers ---------- */
