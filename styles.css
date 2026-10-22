@@ -263,7 +263,7 @@ body::before {
 .livery .b3 { fill: var(--l3, var(--gold-soft)); }
 .livery .b4 { fill: var(--l4, #ffffff); opacity: .3; }
 
-/* ---------- Home hero (full width) ---------- */
+/* ---------- Home hero (full width, photo on the right) ---------- */
 .hero {
   position: relative;
   overflow: hidden;
@@ -272,40 +272,40 @@ body::before {
   color: var(--on-dark);
 }
 .hero-media {
-  /* HERO PHOTO: save the image as hero.jpg (landscape, at least 2000px wide).
-     If the file is missing, the black background and stripes show instead. */
+  /* HERO PHOTO: hero.jpg (landscape). Fades in from the left behind the headline. */
   position: absolute;
-  inset: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 66%;
   z-index: -3;
-  background: url("hero.jpg") center right / cover no-repeat;
+  background: url("hero.jpg") 88% center / cover no-repeat;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 34%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 34%);
 }
 .hero::before {
-  /* keeps the headline readable over any photo */
+  /* keeps the headline readable where it meets the photo */
   content: "";
   position: absolute;
   inset: 0;
   z-index: -2;
-  background:
-    linear-gradient(90deg, rgba(11, 11, 11, .97) 0%, rgba(11, 11, 11, .9) 36%, rgba(11, 11, 11, .5) 66%, rgba(11, 11, 11, .2) 100%),
-    radial-gradient(circle at 90% 0%, rgba(255, 212, 0, .14), transparent 45%);
+  background: linear-gradient(90deg, rgba(11, 11, 11, .96) 0%, rgba(11, 11, 11, .78) 40%, rgba(11, 11, 11, .12) 66%, rgba(11, 11, 11, 0) 100%);
 }
 .hero::after {
-  /* soft fade at the bottom so the stripes sit on a clean edge */
   content: "";
   position: absolute;
   inset: auto 0 0 0;
-  height: 40%;
+  height: 26%;
   z-index: -2;
-  background: linear-gradient(transparent, rgba(11, 11, 11, .55));
+  background: linear-gradient(transparent, rgba(11, 11, 11, .6));
 }
-.hero .livery { inset: 0; width: 100%; height: 100%; z-index: -1; }
 .hero-inner {
   display: flex;
   align-items: center;
   min-height: 680px;
-  padding-block: clamp(72px, 8vw, 120px) clamp(120px, 12vw, 170px);
+  padding-block: clamp(72px, 8vw, 120px);
 }
-.hero-content { position: relative; display: grid; gap: 26px; max-width: 760px; min-width: 0; }
+.hero-content { position: relative; display: grid; gap: 26px; max-width: 720px; min-width: 0; }
 
 .location-chip {
   display: inline-flex;
@@ -328,7 +328,7 @@ body::before {
   box-shadow: 0 0 0 4px rgba(255, 212, 0, .2);
 }
 .hero h1 {
-  font-size: clamp(2.7rem, 1.5rem + 4.6vw, 5.3rem);
+  font-size: clamp(2.5rem, 1.5rem + 3.8vw, 4.6rem);
   line-height: .98;
   letter-spacing: -0.04em;
 }
@@ -340,15 +340,24 @@ body::before {
 }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
 
+@media (max-width: 1100px) {
+  .hero-media { width: 74%; background-position: 82% center; }
+  .hero-content { max-width: 580px; }
+}
 @media (max-width: 760px) {
-  .hero::before {
-    background:
-      linear-gradient(180deg, rgba(11, 11, 11, .93) 0%, rgba(11, 11, 11, .82) 60%, rgba(11, 11, 11, .7) 100%),
-      radial-gradient(circle at 90% 0%, rgba(255, 212, 0, .14), transparent 50%);
+  /* phone: headline on solid black, the van photo underneath */
+  .hero-media {
+    top: auto;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background-position: 74% 60%;
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 40%);
+    mask-image: linear-gradient(180deg, transparent 0%, #000 40%);
   }
-  .hero-media { background-position: 65% center; }
-  .hero-inner { min-height: 0; align-items: flex-start; padding-block: 56px 220px; }
-  .hero .livery { top: auto; height: 210px; }
+  .hero::before { background: none; }
+  .hero::after { height: 18%; }
+  .hero-inner { min-height: 0; align-items: flex-start; padding-block: 52px 280px; }
 }
 
 /* ---------- Section headers ---------- */
@@ -474,7 +483,7 @@ body::before {
   pointer-events: none;
 }
 .work-tile:has(.work-photo) { --fg: #ffffff; }
-.work-tile:has(.work-photo) .work-label { background: linear-gradient(transparent, rgba(11, 11, 11, .8)); padding-top: 60px; }
+.work-tile:has(.work-photo) .work-label { color: #ffffff; background: linear-gradient(transparent, rgba(11, 11, 11, .82)); padding-top: 70px; }
 .work-label small {
   font-size: .78rem;
   font-weight: 700;
@@ -494,6 +503,7 @@ body::before {
   .work-label { padding: 16px; }
   .work-label h3 { font-size: 1.1rem; }
   .work-tile:first-child .work-label { padding: 22px; }
+  .work-tile:not(:first-child) .work-label small { display: none; }
 }
 
 /* Lightbox for real photos */
@@ -845,7 +855,6 @@ body::before {
 .hero-content > *:nth-child(2) { animation-delay: .06s; }
 .hero-content > *:nth-child(3) { animation-delay: .12s; }
 .hero-content > *:nth-child(4) { animation-delay: .18s; }
-.hero .livery { animation: sweep 1.4s cubic-bezier(.2, .8, .2, 1) backwards; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
